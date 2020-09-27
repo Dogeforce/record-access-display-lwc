@@ -1,0 +1,27 @@
+<template>
+    <lightning-card title="Record-level access information" icon-name="custom:custom34">
+        <div class="slds-var-m-around_medium">
+            <lightning-layout>
+                <lightning-layout-item>
+                    <lightning-input
+                        type="text"
+                        label="Search user"
+                        placeholder="use the username, email or name"
+                        onchange={handleSearchTermChange}
+                    ></lightning-input>
+                </lightning-layout-item>
+            </lightning-layout>
+            <lightning-layout>
+                <lightning-layout-item>
+                    <template if:true={userAccessInformation}>
+                        <lightning-input
+                            label="Access level"
+                            value={userAccessInformation.MaxAccessLevel}
+                            read-only>
+                        </lightning-input>
+                    </template>
+                </lightning-layout-item>
+            </lightning-layout>
+        </div>
+    </lightning-card>
+</template>
